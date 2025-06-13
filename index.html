@@ -2,8 +2,8 @@
 Requirements
 [  ] $() Select by Element, ID AND Class 
 [  ] Use Three Different jQuery Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[1., 2., 3., 4., 5.  ] Add Five CSS Declarations
+[ yes ] Include Three Images
 
 Select ONE Additional 
 [ no ] Feature 1 - Use .addClass() method
@@ -25,39 +25,62 @@ Select ONE Additional
     <button id="mem1-button">Memory #1</button>
     <button id="mem2-button">Memory #2</button>
     <button id="mem3-button">Memory #3</button>
-    <h1>My Top 3 Memories of <span>This Year</span></h1>
+    <h1 id="main-title">My Top 3 Dance Memories of <span>This Year</span></h1>
     <ol>
       <li>
         <h3 id="mem1">Memory #1</h3>
-        <p>More about this memory.</p>
+        <p class="memory-text">I had so much fun dancing in Seattle at the Pacific Northwest Ballet's summer program. I improved my ballet technique on flat and en pointe, learned how to partner dancers, and learned some of the Balanchine repetoire! My dance technique and artisty definitely improved while I was there, and I had so much fun with my friends! </p>
+        <img src="https://cdn.craft.cloud/07cfd147-dcc8-4b83-aa98-6397b0ca944b/assets/images/partner/PNB_Logo_Stacked_IconPlusText_k_LG.png?width=1200&height=630&quality=82&fit=cover&s=GykWe-wCYe3nddpbXqmA7tYrzkm3tal5uiydVYrlWQc" width="400" height="200"/>
       </li>
 
       <li>
         <h3 id="mem2">Memory #2</h3>
-        <p>More about this memory.</p>
+        <p class="memory-text">I got to perform a soloist role in my studio's production of the Nutcracker. The production was a New York themed Nutcracker called The KnickerBocker Suite! I danced the roles of a Harlequin in a paintying at a Museum, the soloist role of a baseball player or a football player at a stadium, and a Parks Department officer dnacing in Central Park, which wa sthe secodn Principal role! I loved perofrming for an audience. I loved moving with the music, and although it wa scary, I was thrilled to be in the spotlight!</p>
+        <div class="image-crop">
+  <img src="https://vhx.imgix.net/manhattanyouthballetperfo/assets/c2bcc575-90c7-43d5-9bd2-dbae016d017b-e8a65731.png?auto=format%2Ccompress&fit=crop&h=720&w=1280" />
+</div>
       </li>
 
       <li>
         <h3 id="mem3">Memory #3</h3>
-        <p>More about this memory</p>
+        <p class="memory-text"> I COMMITED TO INDIANA UNIVERSITY FOR COLLEGE!!!! I will be majoring in ballet at the Jacob's School of Music! I will also be studying an outside field which I have yet to decide. I will likely study business, with an emphasis on music business, or kinesiology/ exercise science! I am so excited to continue my dance journey for the next 4 years! I will have the chnace to learn from amazing faculty. There are amazing performance opportunities. I will get to perform Blanchine repertory at some point, which has been a dream of mine. I also get to perofrm a solo on the second biggest stage in the country within my first few months there. I am hyped for the D1 college experience at IU, I think I will have an amazing time there!!</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Indiana_Hoosiers_logo.svg/270px-Indiana_Hoosiers_logo.svg.png" width="300" height="300"/>
       </li>
     </ol>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      $("#mem1-button").click(function () {
-        $("#mem1").css("color", "purple");
-      });
+$(".memory-text").hide();
+  $("img").hide();
+  $(".image-crop").hide();
 
-      $("#mem2-button").click(function () {
-        $("#mem2").css("color", "blue");
-      });
+  
+  $("#mem1-button").click(function () {
+    $("#mem1").css("color", "purple").text("PNB Summer Intensive");
+    $("#mem1").next(".memory-text").show();
+    $("img").eq(0).show(); 
+  });
 
-      $("#mem3-button").click(function () {
-        $("#mem3").css("color", "green");
-      });
-    </script>
+  
+  $("#mem2-button").click(function () {
+    $("#mem2").css("color", "blue").text("Nutcracker");
+    $("#mem2").next(".memory-text").show();
+    $(".image-crop").show();             
+    $(".image-crop img").show();        
+  });
+
+  $("#mem3-button").click(function () {
+    $("#mem3").css("color", "green").text("Committing to my Dream Dance School");
+    $("#mem3").next(".memory-text").show();
+    $("img").eq(2).show();               
+    $("#mem3").append(" 🩰");            
+  });
+
+  $("#main-title").addClass("highlighted-title");
+</script>
+      
   </body>
 </html>
-
 <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
+
+
